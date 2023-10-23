@@ -1,0 +1,9 @@
+export declare const TokenPriceGQL: string;
+export declare const AllV3TicksGQL: string;
+export declare const FeeTierDistributionGQL: string;
+export declare const PositionHistoryGQL: string;
+export declare const UserStakeInfosGQL: string;
+export declare const QueryIdoPoolInfosGQL: string;
+export declare const QueryTokenATHPriceHistory: string;
+export declare const QueryIDOUserDepositedLogsByPool: string;
+export declare const QueryIDOPoolInfo: string;
