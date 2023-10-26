@@ -1,0 +1,51 @@
+{
+  "name": "charmander-sdk",
+  "version": "0.0.290",
+  "description": "ether-sdk",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/LiHang941/ether-sdk",
+  "author": "ether-sdk",
+  "scripts": {
+    "test": "mocha test/**.spec.ts",
+    "clean": "rimraf dist lib lib.esm lib.umd cache artifacts out",
+    "build": "npm run  clean && npm run build:cjs && npm run build:umd",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:umd": "webpack",
+    "build:contracts": "rm -rf src/abi/*.sol && npx hardhat compile && cp -r artifacts/contracts/* src/abi/ && rm -rf src/abi/*/*.dbg.json && sh abi-handler.sh"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/lodash": "^4.14.199",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "^20.8.4",
+    "chai": "^4.2.0",
+    "hardhat": "^2.6.5",
+    "mocha": "^10.2.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "*",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "@openzeppelin/contracts": "3.4.2-solc-0.7",
+    "@uniswap/lib": "4.0.1-alpha",
+    "base64-sol": "1.1.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "axios": "^1.5.1",
+    "bignumber.js": "^9.0.1",
+    "ethers": "^6.8.0",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.6.1",
+    "lodash": "^4.17.21"
+  }
+}
