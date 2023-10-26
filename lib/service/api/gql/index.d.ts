@@ -1,0 +1,18 @@
+export declare const TokenPriceGQL: string;
+export declare const AllV3TicksGQL: string;
+export declare const FeeTierDistributionGQL: string;
+export declare const PositionHistoryGQL: string;
+export declare const UserStakeInfosGQL: string;
+export declare const QueryIdoPoolInfosGQL: string;
+export declare const QueryTokenATHPriceHistory: string;
+export declare const QueryIDOUserDepositedLogsByPool: string;
+export declare const QueryIDOPoolInfo: string;
+export declare const QueryBlockTimeGQL: (timestamps: number[]) => string;
+export declare const topPoolsGQL: string;
+export declare const poolsBulkGQL: (block: number, pools: string[]) => string;
+export declare const topTokensGQL: string;
+export declare const tokensBulkGQL: (block: number | undefined, tokens: string[]) => string;
+export declare const ethPricesGQL: (block24?: number, block48?: number, blockWeek?: number) => string;
+export declare const globalDataGQL: (block?: string | number) => string;
+export declare const globalChartGQL: string;
+export declare const globalTransactionsGQL: string;
