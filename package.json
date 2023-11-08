@@ -1,0 +1,81 @@
+{
+  "name": "charmander-sdk",
+  "type": "module",
+  "version": "0.0.630",
+  "packageManager": "yarn@1.22.19",
+  "author": "LiHang <1329075357@qq.com>",
+  "license": "MIT",
+  "funding": "https://github.com/LiHang941",
+  "homepage": "https://github.com/l2dex/charmander-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l2dex/charmander-sdk.git"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ajv": "6.12.6",
+    "axios": "^1.6.0",
+    "bignumber.js": "^9.1.2",
+    "ethers": "^6.8.1",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^1.1.0",
+    "@antfu/ni": "^0.21.8",
+    "@antfu/utils": "^0.7.6",
+    "@openzeppelin/contracts": "^5.0.0",
+    "@types/lodash-es": "^4.17.10",
+    "@types/node": "^20.8.10",
+    "@uniswap/lib": "^4.0.1-alpha",
+    "base64-sol": "^1.1.0",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.53.0",
+    "esno": "^0.17.0",
+    "hardhat": "^2.19.0",
+    "lint-staged": "^15.0.2",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2",
+    "unbuild": "1.2.1",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
