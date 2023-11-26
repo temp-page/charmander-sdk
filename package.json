@@ -1,0 +1,63 @@
+{
+  "name": "charmander-sdk",
+  "version": "0.0.970",
+  "packageManager": "yarn@1.22.19",
+  "author": "LiHang <1329075357@qq.com>",
+  "license": "MIT",
+  "funding": "https://github.com/LiHang941",
+  "homepage": "https://github.com/l2dex/charmander-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l2dex/charmander-sdk.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
+    "lint": "eslint . --fix",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "build:contracts": "rm -rf src/abi/*.sol && npx hardhat compile && cp -r artifacts/contracts/* src/abi/ && rm -rf src/abi/*/*.dbg.json && sh abi-handler.sh"
+  },
+  "dependencies": {
+    "ajv": "6.12.6",
+    "axios": "^1.6.0",
+    "bignumber.js": "^9.1.2",
+    "ethers": "^6.8.1",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.15.8",
+    "@antfu/eslint-config": "^1.1.0",
+    "@antfu/ni": "^0.21.8",
+    "@antfu/utils": "^0.7.6",
+    "@openzeppelin/contracts": "3.4.2-solc-0.7",
+    "@types/lodash": "^4.14.201",
+    "@types/node": "^20.8.10",
+    "@uniswap/lib": "4.0.1-alpha",
+    "base64-sol": "^1.1.0",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.53.0",
+    "esno": "^0.17.0",
+    "hardhat": "^2.19.0",
+    "lint-staged": "^15.0.2",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
