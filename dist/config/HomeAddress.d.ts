@@ -1,0 +1,34 @@
+export declare const TESTNET_ADDRESSES: {
+    AgniPoolDeployer: string;
+    AgniFactory: string;
+    InitCodeHashAddress: string;
+    InitCodeHash: string;
+    WMNT: string;
+    SwapRouter: string;
+    Quoter: string;
+    QuoterV2: string;
+    TickLens: string;
+    NFTDescriptor: string;
+    NonfungibleTokenPositionDescriptor: string;
+    NonfungiblePositionManager: string;
+    AgniInterfaceMulticall: string;
+    Multicall3: string;
+};
+export declare const MAINNET_ADDRESSES: {
+    AgniPoolDeployer: string;
+    AgniFactory: string;
+    InitCodeHashAddress: string;
+    InitCodeHash: string;
+    WMNT: string;
+    SwapRouter: string;
+    Quoter: string;
+    QuoterV2: string;
+    TickLens: string;
+    NFTDescriptor: string;
+    NonfungibleTokenPositionDescriptor: string;
+    NonfungiblePositionManager: string;
+    AgniInterfaceMulticall: string;
+    Multicall3: string;
+    tokens: string[];
+};
+export declare function initAddress(ENV: 'dev' | 'test' | 'prod' | 'prod_node'): void;
